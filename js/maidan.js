@@ -549,7 +549,7 @@ $('#eight').waypoint(function(direction) {
 
 
 $('#nine').waypoint(function(direction) {
-  $(".mapboxgl-popup, fight-path").fadeOut("slow");
+  $(".mapboxgl-popup, .fight-path").fadeOut("slow");
   morph("geo181320", ["maidan", "mariinka"]);
   new_line("#650149", ["lypska", "oplot"]);
   create_popup([30.543557, 50.443881], 'атака Оплоту');
