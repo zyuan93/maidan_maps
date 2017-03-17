@@ -2,7 +2,7 @@
 
 var screen_width = $( window ).width();
 var zoom_size = (screen_width <= 1280 ? 14 : 15);
-var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] )
+var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] );
 
 
 var map = new mapboxgl.Map({
@@ -22,8 +22,8 @@ map.doubleClickZoom.disable();
 
 map.on('load', function () {
   
-  var bdata = 'lines_181012.geojson'
-  map.addSource('barricade-data', { type: 'geojson', data: bdata })
+  var bdata = 'lines_181012.geojson';
+  map.addSource('barricade-data', { type: 'geojson', data: bdata });
   
 
   // barricade layer
@@ -54,8 +54,8 @@ map.on('load', function () {
     });
 
   
-  var buildings_data = 'maidan_buildings.geojson'
-  map.addSource('buildings_data', { type: 'geojson', data: buildings_data })
+  var buildings_data = 'maidan_buildings.geojson';
+  map.addSource('buildings_data', { type: 'geojson', data: buildings_data });
   
 
   // buildings layer
@@ -82,7 +82,7 @@ map.on('load', function () {
 
 
   // fights layer
-  map.addSource('fights-data', { type: 'geojson', data: "fights18.geojson" })
+  map.addSource('fights-data', { type: 'geojson', data: "fights18.geojson" });
   
   map.addLayer({
       "id": "fights",
@@ -90,7 +90,7 @@ map.on('load', function () {
       "source": "fights-data",
       "layout": {
           "line-cap": "round",
-          "line-join": "round",
+          "line-join": "round"
       },
       "paint": {
           "line-color": "#67001f",
@@ -320,7 +320,7 @@ function show_killing(date1, date2, condition) {
     .each(function(d) {
       if (condition) {
         var full_name = d.properties.name;
-        surname = full_name.split(" ");
+        var surname = full_name.split(" ");
         create_popup(d.geometry.coordinates, surname[0]);
       }
     })
@@ -334,7 +334,7 @@ function new_line(color, list) {
 d3.json("protestline_all.geojson", function(err, geodata) {
   var geometries = [];
 
-  for (i = 0; i < list.length; i++) { 
+  for (var i = 0; i < list.length; i++) { 
 
      // geometries.push(geodata.features[list[i]]);
       var new_line = geodata.features.filter(function(feature) {
@@ -381,8 +381,8 @@ function update_position(features) {
 
     for (i = 0; i < features.length; i++) { 
       d3.selectAll("#" + features[i].properties["id"]).attr("d", updated_position[i]);
-    };
-  };
+    }
+  }
 
   map.on("viewreset", function() {
     update();
@@ -408,7 +408,7 @@ function morph(key, list) {
 
     var features = data[key];
     
-    for (i = 0; i < list.length; i++) {  
+    for (var i = 0; i < list.length; i++) {  
       var updated_feature = features.filter(function(feature) {
         return feature.properties["id"] == list[i];
       });
@@ -416,7 +416,7 @@ function morph(key, list) {
       d3.select("#" + list[i]).transition()
           .duration(2000)
           .attr("d", updated_feature.map(path));
-    };
+    }
 
     update_position(features);
 
@@ -437,7 +437,7 @@ function play_video(file, note) {
   $( ".video-events-con" ).css( "z-index", 2 );
   $("#map").animate({ opacity: 0 }, 300 );
   $(".video-events-con").animate({ opacity: 1 }, 300 );
-  $("#video-events").html('<source src=' + file + ' type="video/mp4"></source>' );
+  $("#video-events").html('<source src=' + file + ' type="video/mp4">' );
   document.getElementById('video-events').load();
   document.getElementById('video-events').play();
   $("#video-note").html(note);
