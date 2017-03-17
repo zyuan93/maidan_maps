@@ -33,11 +33,13 @@
 
             if (check < 0) return;
 
+            var check_plus_1 = Math.min(timestamps.length - 1, check + 1);
+
             var off_p = check_offsets[check];
-            var off_n = check_offsets[check + 1];
+            var off_n = check_offsets[check_plus_1];
 
             var time_p = timestamps[check];
-            var time_n = timestamps[check + 1];
+            var time_n = timestamps[check_plus_1];
 
             var interpolate = d3.interpolateDate(time_p, time_n);
 
