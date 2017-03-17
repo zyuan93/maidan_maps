@@ -911,7 +911,7 @@ $('#forty-seven').waypoint(function(direction) {
 
 $('#forty-eight').waypoint(function(direction) {
   $(".mapboxgl-popup").fadeOut("slow");
-  animate_fly([30.522290,50.450731], zoom_size*1.1, 10, 10);
+  animate_fly([30.522290,50.450731], zoom_size*1.2, 10, 10);
   show_killing("2014-02-19 02:10:01", "2014-02-20 08:00:00", true);
 },{ offset: 250 });
 
@@ -1009,7 +1009,7 @@ $('#sixty-one').waypoint(function(direction) {
   morph("geo200910", ["chorna-rota"]);
   $(".mapboxgl-popup").fadeOut("slow");
   if (direction === 'down') {
-    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0913.mp4", "Снайпери з жовтими пов'язками стріляють в натовп. ~9:13 20 січня");  
+    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0913.mp4", "Снайпери з жовтими пов'язками стріляють в натовп. ~9:13 20 лютого");  
   } else if (direction === 'up') {
      stop_video();  
   }
@@ -1022,7 +1022,7 @@ $('#sixty-two').waypoint(function(direction) {
   if (direction === 'down') {
     stop_video();
   } else if (direction === 'up') {
-    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0913.mp4", "Снайпери з жовтими пов'язками стріляють в натовп. ~9:13 20 січня");  
+    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0913.mp4", "Снайпери з жовтими пов'язками стріляють в натовп. ~9:13 20 лютого");  
   }
 },{ offset: 350 });
 
@@ -1032,4 +1032,77 @@ $('#sixty-three').waypoint(function(direction) {
   show_killing("2014-02-20 09:15:41", "2014-02-20 09:18:08", false);
   create_popup([30.527153468447487, 50.449888581575465], 'Аксенін, Мойсей, Тарасюк');
 },{ offset: 150 });
+
+
+$('#sixty-four').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  show_killing("2014-02-20 09:18:09", "2014-02-20 09:22:50", true);
+},{ offset: 150 });
+
+
+$('#sixty-five').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  if (direction === 'down') {
+    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0922.mp4", "Смерть Андрія Дигдаловича, 09:22:51 20 лютого");  
+  } else if (direction === 'up') {
+     stop_video();  
+  }
+},{ offset: 150 });
+
+
+$('#sixty-six').waypoint(function(direction) {
+  show_killing("2014-02-20 09:22:51", "2014-02-20 09:28:00", true);
+  if (direction === 'down') {
+    stop_video();
+  } else if (direction === 'up') {
+    play_video("http://texty.org.ua/video/maidan_maps/instytutska-0922.mp4", "Смерть Андрія Дигдаловича, 09:22:51 20 лютого");   
+  }
+},{ offset: 350 });
+
+
+$('#sixty-seven').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  show_killing("2014-02-20 09:28:01", "2014-02-20 09:29:00", true);
+},{ offset: 150 });
+
+
+$('#sixty-eight').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  show_killing("2014-02-20 09:29:01", "2014-02-20 09:56:36",true);
+},{ offset: 200 });
+
+$('#sixty-nine').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  show_killing("2014-02-20 09:56:37", "2014-02-20 11:29:54",true);
+  create_popup([30.526485293253895, 50.449354803550193], 'Полянський');
+  create_popup([30.52885167800893, 50.447952269965796], 'Шилінг');
+  create_popup([30.528407731469191, 50.448185896579758], 'Паньків, Царьок, Чміленко, Храпченко');
+},{ offset: 10 });
+
+
+$('#seventy').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  if (direction === 'down') {
+     play_video("http://texty.org.ua/video/maidan_maps/instytutska-1001.mp4", "Eпіцентр розстрілів, ~10:01 20 лютого");  
+  } else if (direction === 'up') {
+     stop_video();  
+  }
+},{ offset: 150 });
+
+
+$('#seventy-one').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+  show_killing("2014-02-20 11:29:55", "2014-02-20 16:57:55", true);
+  if (direction === 'down') {
+    stop_video();
+  } else if (direction === 'up') {
+    play_video("http://texty.org.ua/video/maidan_maps/instytutska-1001.mp4", "Eпіцентр розстрілів, ~10:01 20 лютого");   
+  }
+},{ offset: 350 });
+
+
+$('#seventy-two').waypoint(function(direction) {
+  $(".mapboxgl-popup").fadeOut("slow");
+},{ offset: 150 });
+
 
