@@ -1,6 +1,5 @@
 (function(){
 
-
     $(document).ready(function(){
         var checkpoints = $("[data-timestamp]");
         var episodes = $("[data-episode]");
@@ -28,22 +27,25 @@
 
             if (epi != window.__episode__) {
                 $('.clock-in-da-top').trigger("episode-changed", epi);
-                window.__episode__ = epi
+                window.__episode__ = epi;
             }
 
             if (check < 0) return;
 
-            var check_plus_1 = Math.min(timestamps.length - 1, check + 1);
+            var date;
+            if (check < timestamps.length - 1) {
+                var off_p = check_offsets[check];
+                var off_n = check_offsets[check + 1];
 
-            var off_p = check_offsets[check];
-            var off_n = check_offsets[check_plus_1];
+                var time_p = timestamps[check];
+                var time_n = timestamps[check + 1];
 
-            var time_p = timestamps[check];
-            var time_n = timestamps[check_plus_1];
+                var interpolate = d3.interpolateDate(time_p, time_n);
 
-            var interpolate = d3.interpolateDate(time_p, time_n);
-
-            var date = interpolate((middle - off_p)/(off_n-off_p));
+                date = interpolate((middle - off_p)/(off_n-off_p));
+            } else {
+                date = timestamps[timestamps.length - 1];
+            }
             drawDate(date);
         });
 
