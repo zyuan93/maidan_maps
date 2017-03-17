@@ -1,6 +1,5 @@
 (function(){
 
-
     $(document).ready(function(){
         var checkpoints = $("[data-timestamp]");
         var episodes = $("[data-episode]");
@@ -28,20 +27,25 @@
 
             if (epi != window.__episode__) {
                 $('.clock-in-da-top').trigger("episode-changed", epi);
-                window.__episode__ = epi
+                window.__episode__ = epi;
             }
 
             if (check < 0) return;
 
-            var off_p = check_offsets[check];
-            var off_n = check_offsets[check + 1];
+            var date;
+            if (check < timestamps.length - 1) {
+                var off_p = check_offsets[check];
+                var off_n = check_offsets[check + 1];
 
-            var time_p = timestamps[check];
-            var time_n = timestamps[check + 1];
+                var time_p = timestamps[check];
+                var time_n = timestamps[check + 1];
 
-            var interpolate = d3.interpolateDate(time_p, time_n);
+                var interpolate = d3.interpolateDate(time_p, time_n);
 
-            var date = interpolate((middle - off_p)/(off_n-off_p));
+                date = interpolate((middle - off_p)/(off_n-off_p));
+            } else {
+                date = timestamps[timestamps.length - 1];
+            }
             drawDate(date);
         });
 
@@ -63,6 +67,8 @@
 
         var top_margin = 20;
         function scrollToEpisode(epi) {
+            epi = minmax(epi, 0, episode_offsets.length - 1);
+
             $('html, body').animate({
                 scrollTop: episode_offsets[epi] - top_margin
             }, 1500);
@@ -70,23 +76,22 @@
 
         $('.clock-in-da-top').on('episode-changed', function(e, epi){
             if (epi < 0) {
-                $('#clock-backward-btn').addClass('disabled');
+                // $('#clock-backward-btn').addClass('disabled');
                 $('#clock-forward-btn').removeClass('disabled');
                 return;
             }
 
             if (epi > 0 && epi < episodes.length - 1) {
-                $('#clock-backward-btn').removeClass('disabled');
+                // $('#clock-backward-btn').removeClass('disabled');
                 $('#clock-forward-btn').removeClass('disabled');
                 return;
             }
 
             if (epi >= episodes.length - 1) {
-                $('#clock-backward-btn').removeClass('disabled');
+                // $('#clock-backward-btn').removeClass('disabled');
                 $('#clock-forward-btn').addClass('disabled');
             }
         });
-
 
         $('#clock-forward-btn').click(function() { scrollToEpisode(window.__episode__ + 1)});
         $('#clock-backward-btn').click(function() {
@@ -110,10 +115,13 @@
     var timeFormat = d3.timeFormat("%H:%M");
     var dayFormat = d3.timeFormat("%d");
 
-
     function drawDate(date) {
         $('.clock-in-da-top .day-number').text(dayFormat(date));
         $('.clock-in-da-top .time').text(timeFormat(date));
+    }
+    
+    function minmax(v, min, max) {
+        return Math.min(Math.max(v, min), max);
     }
 
 })($);
