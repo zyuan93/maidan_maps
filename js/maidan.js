@@ -1,7 +1,7 @@
 // ======== Mapbox ===========
 
 var screen_width = $( window ).width();
-var zoom_size = (screen_width <= 1280 ? 14 : 15);
+var zoom_size = (screen_width <= 1280 ? 14 : 14.3);
 var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] );
 
 
@@ -328,16 +328,19 @@ function show_killing(date1, date2, condition) {
 
 
 
+var protestline_data; // global 
+d3.json("protestline_all.geojson", function(err, data) {
+    protestline_data = data;
+});
+
+
 //draw line
 function new_line(color, list) {
 
-d3.json("protestline_all.geojson", function(err, geodata) {
   var geometries = [];
 
   for (var i = 0; i < list.length; i++) { 
-
-     // geometries.push(geodata.features[list[i]]);
-      var new_line = geodata.features.filter(function(feature) {
+      var new_line = protestline_data.features.filter(function(feature) {
         return feature.properties["id"] == list[i];
       });
       geometries.push(new_line[0]);
@@ -366,15 +369,13 @@ d3.json("protestline_all.geojson", function(err, geodata) {
       update_position(geometries);
   },100); 
 
- });
-
 }
 
 
 
 //update polistion
 function update_position(features) {
-  //  update the path using the current transform 
+  
   function update() {
 
     var updated_position = features.map(path)
@@ -400,13 +401,16 @@ function update_position(features) {
 }
 
 
+var morph_data; // global 
+d3.json("m_main_test.json", function(err, data) {
+    morph_data = data;
+});
+
 
 //morph polygon
 function morph(key, list) {
 
-  d3.json("m_main_test.json", function(err, data) {
-
-    var features = data[key];
+    var features = morph_data[key];
     
     for (var i = 0; i < list.length; i++) {  
       var updated_feature = features.filter(function(feature) {
@@ -419,12 +423,6 @@ function morph(key, list) {
     }
 
     update_position(features);
-
-    window.setTimeout(function(){
-      update_position(features);
-    },2000); 
-
-  });
 }
 
 
@@ -531,6 +529,7 @@ $('#six').waypoint(function(direction) {
 $('#seven').waypoint(function(direction) {
   $(".mapboxgl-popup, .fight-path").fadeOut("slow");
   show_buildings('181012');
+  $("#video-note").css({ opacity: 1 });
   if (direction === 'down') {
     play_video("http://texty.org.ua/video/maidan_maps/mariinka-start.mp4");
   } else if (direction === 'up') {

@@ -141,7 +141,7 @@ svg {
 .video-events-con {
   opacity: 1;
   position: fixed;
-  width: auto    !important;
+  width: 100%   !important;
   height: auto   !important;
   margin: 0;
   left:0;
@@ -149,6 +149,14 @@ svg {
   z-index:2;
 }
 
+#video-note {
+  width: 130px; 
+  height: 100px; 
+  position: fixed; 
+  bottom: 50px; 
+  right:30px;
+  opacity:0;
+}
 
 video { 
     position: fixed;
