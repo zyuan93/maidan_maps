@@ -203,7 +203,7 @@ svg {
     .text-container {
       margin-top: 155%; } }
 
-.mute-btn {
+.mute-btn-wrapper {
   position: fixed;
   z-index: 100000;
   padding: 3px;
@@ -218,7 +218,24 @@ svg {
   text-align: center;
   line-height: 50px;
   vertical-align: middle;
-  padding: 8px; }
+  padding: 8px;
+  user-select: none;
+  cursor: pointer; }
+
+.btn {
+  padding-top: 3px; }
+
+.btn.focus, .btn:focus,
+.btn:hover {
+  color: #FAA61A; }
+
+.mute:hover {
+  border: 1px solid #FAA61A; }
+
+.clock-in-da-top {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 1.5em; }
 
 .video-events-con {
   opacity: 1;
