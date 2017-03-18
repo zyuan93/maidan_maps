@@ -59,7 +59,7 @@
                 <a class="btn" id="clock-forward-btn"><i class="fa fa-forward" aria-hidden="true"></i></a>
             </div>
 
-            <a class="play-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
+            <a id="play-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
             <a class="mute-btn"><i class="fa fa-volume-off mute fa-2x" aria-hidden="true"></i></a>
         </div>
 
@@ -636,6 +636,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/share-behavior.js"></script>
 <script src="js/clock.js"></script>
+<script src="js/mobile-video.js"></script>
 <script type="text/javascript">
 
 
@@ -675,11 +676,16 @@ $(".mute-btn").click( function (){
 });
 
 
-// inline video 
-enableInlineVideo(video);
-$(".play-btn").click( function (){
-    video.play();
-});
+// // inline video 
+// enableInlineVideo(video);
+// $(".play-btn").click( function (){
+//     if (video.paused) {
+//                 video.play();
+//             } else {
+//                 video.pause();
+//             }
+//     console.log("hey, I work normally");
+// });
 
 </script>
 
