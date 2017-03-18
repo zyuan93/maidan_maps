@@ -223,9 +223,6 @@ html, body, #wrapper {
   left: 0;
   top: 0;
   z-index: 1; }
-  @media (max-width: 667px) {
-    #map {
-      display: none; } }
 
 svg {
   position: absolute;
@@ -266,6 +263,9 @@ svg {
   @media (max-width: 768px) {
     .text-container {
       margin-top: 210%; } }
+  @media (max-width: 667px) {
+    .text-container {
+      margin-left: 0px; } }
 
 .mute-btn-wrapper {
   position: fixed;
@@ -273,11 +273,18 @@ svg {
   padding: 3px;
   top: 10px;
   right: 20px; }
+  @media (max-width: 375px) {
+    .mute-btn-wrapper {
+      background: rgba(15, 15, 19, 0.9);
+      padding: 15px 0 5px 30px;
+      top: 0px;
+      right: 0px;
+      width: 100%; } }
 
-.mute, play {
+.mute, .play {
   width: 35px;
   height: 35px;
-  border: 1px solid white;
+  border: 1px solid #bdbdbd;
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
@@ -285,6 +292,11 @@ svg {
   padding: 8px;
   user-select: none;
   cursor: pointer; }
+  .mute:hover, .play:hover {
+    border: 1px solid #FAA61A; }
+
+.play {
+  margin-right: 15px; }
 
 .btn {
   padding-top: 3px; }
@@ -292,9 +304,6 @@ svg {
 .btn.focus, .btn:focus,
 .btn:hover {
   color: #FAA61A; }
-
-.mute:hover {
-  border: 1px solid #FAA61A; }
 
 .clock-in-da-top {
   display: inline-block;
@@ -389,6 +398,11 @@ h1 {
       font-size: 12px;
       margin-left: -77px;
       width: 75px; } }
+  @media (max-width: 667px) {
+    .date {
+      font-size: 12px;
+      margin-left: 0px;
+      padding-top: 5px; } }
 
 p span {
   background: rgba(191, 211, 230, 0.4); }

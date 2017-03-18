@@ -106,9 +106,9 @@
 
     $('#two').waypoint(function(direction) {
         if (direction === 'down') {
-            $(".clock-in-da-top").fadeIn(400);
+            $(".mute-btn-wrapper").fadeIn(400);
         } else if (direction === 'up') {
-            $(".clock-in-da-top").fadeOut(400);
+            $(".mute-btn-wrapper").fadeOut(400);
         }
     },{ offset: 150 });
 

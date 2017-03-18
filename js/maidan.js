@@ -1,6 +1,7 @@
 // ======== Mapbox ===========
 
 var screen_width = $( window ).width();
+console.log(screen_width);
 // if ( screen_width <= 768) {
 //   var video = document.getElementById('video-events');
 //   video.muted = true;

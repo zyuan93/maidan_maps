@@ -12,9 +12,11 @@ function enableButtons(video) {
 	if (playBtn) {
 		playBtn.addEventListener('click', function () {
 			if (video.paused) {
+				$(this).html('<i class="fa fa-pause play fa-2x" aria-hidden="true">');
 				video.play();
 			} else {
 				video.pause();
+				$(this).html('<i class="fa fa-play play fa-2x" aria-hidden="true">');
 			}
 		});
 	}

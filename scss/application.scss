@@ -43,9 +43,6 @@ html, body, #wrapper {
   left:0;
   top:0;
   z-index:1;
-  @media #{$brk-spnarrow} {
-      display: none;
-  }
 }
 
 svg {
@@ -95,6 +92,9 @@ svg {
   @media #{$brk-narrow} {
       margin-top: 210%;
   }
+  @media #{$brk-spnarrow} {
+      margin-left: 0px;
+  }
 }
 
 .mute-btn-wrapper {
@@ -103,12 +103,19 @@ svg {
   padding:3px;
   top:10px;
   right:20px;
+  @media #{$brk-xxsnarrow} {
+    background: rgba(15,15,19,0.9);
+    padding: 15px 0 5px 30px;
+    top:0px;
+    right:0px;
+    width: 100%;
+  }
 }
 
-.mute, play{
+.mute, .play{
   width: 35px;
   height: 35px;
-  border:1px solid white;
+  border:1px solid #bdbdbd;
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
@@ -116,6 +123,13 @@ svg {
   padding: 8px;
   user-select: none;
   cursor: pointer;
+  &:hover {
+    border:1px solid $orange;
+  }
+}
+
+.play {
+  margin-right: 15px;
 }
 
 .btn {
@@ -125,10 +139,6 @@ svg {
 .btn.focus,.btn:focus,
 .btn:hover {
   color: $orange;
-}
-
-.mute:hover {
-  border:1px solid $orange;
 }
 
 .clock-in-da-top {
@@ -168,7 +178,6 @@ video {
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
 }
-
 
 .disclaimer {
  text-align: center;
@@ -235,6 +244,11 @@ h1 {
     margin-left: -77px;
     width: 75px;
   }
+  @media #{$brk-spnarrow} {
+  font-size:12px;
+  margin-left: 0px;
+  padding-top: 5px;
+}
 }
 
 p  {
