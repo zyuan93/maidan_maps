@@ -16,7 +16,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 .marker {
     display: block;
     border: none;
@@ -94,7 +93,7 @@ svg {
  margin-left: 85px;
  margin-top: 100%;
   @media #{$brk-narrow} {
-      margin-top: 155%;
+      margin-top: 210%;
   }
 }
 
@@ -170,25 +169,25 @@ video {
     transform: translateX(-50%) translateY(-50%);
 }
 
+
 .disclaimer {
  text-align: center;
  & li {
-  font-size:1.1em;
+  @media #{$brk-xlarge} {
+    @include text(1.3em, 1.3em, 300);
+  }
+  @media #{$brk-large} {
+    @include text(1.1em, 1.3em, 300);
+  }
  }
 }
 
 
 h1 {
   text-align: center;
-  @media #{$brk-spnarrow} {
-    font-size: 2.5em;
-  }
 }
 
 .subtitle {
-	font-size: 1.7em;
-    line-height: 1.5em;
-    font-weight: 300;
     color: #eee;
     text-align:center;
     margin-bottom: 2em;
@@ -197,8 +196,6 @@ h1 {
 
 .credits {
   text-align: center;
-  font-size: 1.3em;
-  line-height: 1.5em;
   & span {
     font-weight: bold;
   }
@@ -209,21 +206,35 @@ h1 {
     color: #ffeda0;
     font-weight:400;
   }
+  @media #{$brk-xlarge} {
+    @include text(1.5em, 1.6em);
+  }
+  @media #{$brk-large} {
+    @include text(1.3em, 1.5em);
+  }
 }
+
 
 .note {
     font-size: 1.3em;
 }
 
 .date {
-  margin-left: -77px;
-  width: 75px;
   letter-spacing: 2px;
   padding-top: 5px;
   color: #ffffff;
   font-style: italic;
-  font-size:12px;
   float:left;
+  @media #{$brk-xlarge} {
+    font-size:14px;
+    margin-left: -87px;
+    width: 85px;
+  }
+  @media #{$brk-large} {
+    font-size:12px;
+    margin-left: -77px;
+    width: 75px;
+  }
 }
 
 p  {
@@ -281,11 +292,6 @@ p  {
   }
 }
 
-.no-padding {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 
 .mobile {
   display: none;
@@ -324,3 +330,13 @@ div.tooltip {
     stroke-dasharray:10000; 
     -webkit-transition:stroke-dashoffset 15s ease-in
   }
+
+
+// inline video
+
+.IIV::-webkit-media-controls-play-button,
+.IIV::-webkit-media-controls-start-playback-button {
+    opacity: 0;
+    pointer-events: none;
+    width: 5px;
+}

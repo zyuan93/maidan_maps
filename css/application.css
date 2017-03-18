@@ -22,34 +22,98 @@ a {
     color: #eeeeee;
     border-bottom: 2px dotted #cccccc; }
 
-h1 {
-  font-size: 5.5em;
-  line-height: 1.8em;
-  font-weight: 800; }
+@media (max-width: 2560px) {
+  h1 {
+    font-size: 10em;
+    line-height: 3.2em;
+    font-weight: 800; } }
+@media (max-width: 1920px) {
+  h1 {
+    font-size: 9em;
+    line-height: 3em;
+    font-weight: 800; } }
+@media (max-width: 1366px) {
+  h1 {
+    font-size: 5.5em;
+    line-height: 1.8em;
+    font-weight: 800; } }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4.5em;
+    line-height: 1.7em;
+    font-weight: 800; } }
+@media (max-width: 667px) {
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.5em;
+    font-weight: 800; } }
 
 h2 {
-  font-size: 2em;
-  line-height: 2em;
-  font-weight: bold;
   margin-top: 10em;
   padding-bottom: 1em; }
+  @media (max-width: 1920px) {
+    h2 {
+      font-size: 2.5em;
+      line-height: 3em;
+      font-weight: 800; } }
+  @media (max-width: 1366px) {
+    h2 {
+      font-size: 2.1em;
+      line-height: 2.2em;
+      font-weight: bold; } }
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 1.8em;
+      line-height: 2em;
+      font-weight: bold; } }
+  @media (max-width: 667px) {
+    h2 {
+      font-size: 1.7em;
+      line-height: 1.8em;
+      font-weight: bold; } }
 
 h3 {
-  font-size: 1.7em;
-  line-height: 2em;
-  font-weight: bold;
   margin-top: 10em; }
+  @media (max-width: 1920px) {
+    h3 {
+      font-size: 2em;
+      line-height: 2.3em;
+      font-weight: 800; } }
+  @media (max-width: 1366px) {
+    h3 {
+      font-size: 1.8em;
+      line-height: 2em;
+      font-weight: bold; } }
+  @media (max-width: 1024px) {
+    h3 {
+      font-size: 1.7em;
+      line-height: 1.8em;
+      font-weight: bold; } }
+  @media (max-width: 667px) {
+    h3 {
+      font-size: 1.6em;
+      line-height: 1.7em;
+      font-weight: bold; } }
 
-p {
-  font-size: 1.5em;
-  line-height: 1.7em;
-  font-weight: 300;
+p, li {
   padding-bottom: 1.5em; }
+  @media (max-width: 1920px) {
+    p, li {
+      font-size: 1.8em;
+      line-height: 2em;
+      font-weight: 300; } }
+  @media (max-width: 1366px) {
+    p, li {
+      font-size: 1.5em;
+      line-height: 1.8em;
+      font-weight: 300; } }
+  @media (max-width: 1024px) {
+    p, li {
+      font-size: 1.5em;
+      line-height: 1.6em;
+      font-weight: 300; } }
 
 li {
-  font-size: 1.5em;
-  line-height: 1.7em;
-  font-weight: 300;
   padding-bottom: 0.5em; }
 
 ul {
@@ -201,7 +265,7 @@ svg {
   margin-top: 100%; }
   @media (max-width: 768px) {
     .text-container {
-      margin-top: 155%; } }
+      margin-top: 210%; } }
 
 .mute-btn-wrapper {
   position: fixed;
@@ -268,27 +332,27 @@ video {
 
 .disclaimer {
   text-align: center; }
-  .disclaimer li {
-    font-size: 1.1em; }
+  @media (max-width: 1920px) {
+    .disclaimer li {
+      font-size: 1.3em;
+      line-height: 1.3em;
+      font-weight: 300; } }
+  @media (max-width: 1366px) {
+    .disclaimer li {
+      font-size: 1.1em;
+      line-height: 1.3em;
+      font-weight: 300; } }
 
 h1 {
   text-align: center; }
-  @media (max-width: 667px) {
-    h1 {
-      font-size: 2.5em; } }
 
 .subtitle {
-  font-size: 1.7em;
-  line-height: 1.5em;
-  font-weight: 300;
   color: #eee;
   text-align: center;
   margin-bottom: 2em; }
 
 .credits {
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 1.5em; }
+  text-align: center; }
   .credits span {
     font-weight: bold; }
   .credits span.note {
@@ -297,19 +361,34 @@ h1 {
     text-transform: uppercase;
     color: #ffeda0;
     font-weight: 400; }
+  @media (max-width: 1920px) {
+    .credits {
+      font-size: 1.5em;
+      line-height: 1.6em; } }
+  @media (max-width: 1366px) {
+    .credits {
+      font-size: 1.3em;
+      line-height: 1.5em; } }
 
 .note {
   font-size: 1.3em; }
 
 .date {
-  margin-left: -77px;
-  width: 75px;
   letter-spacing: 2px;
   padding-top: 5px;
   color: #ffffff;
   font-style: italic;
-  font-size: 12px;
   float: left; }
+  @media (max-width: 1920px) {
+    .date {
+      font-size: 14px;
+      margin-left: -87px;
+      width: 85px; } }
+  @media (max-width: 1366px) {
+    .date {
+      font-size: 12px;
+      margin-left: -77px;
+      width: 75px; } }
 
 p span {
   background: rgba(191, 211, 230, 0.4); }
@@ -353,10 +432,6 @@ p span.black {
       .quote::before {
         font-size: 7em; } }
 
-.no-padding {
-  padding-left: 0px;
-  padding-right: 0px; }
-
 .mobile {
   display: none; }
   @media (max-width: 667px) {
@@ -385,5 +460,11 @@ div.tooltip {
   stroke-dashoffset: 10000;
   stroke-dasharray: 10000;
   -webkit-transition: stroke-dashoffset 15s ease-in; }
+
+.IIV::-webkit-media-controls-play-button,
+.IIV::-webkit-media-controls-start-playback-button {
+  opacity: 0;
+  pointer-events: none;
+  width: 5px; }
 
 /*# sourceMappingURL=application.css.map */

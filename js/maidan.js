@@ -1,7 +1,11 @@
 // ======== Mapbox ===========
 
 var screen_width = $( window ).width();
-var zoom_size = (screen_width <= 1280 ? 14 : 14.3);
+if ( screen_width <= 768) {
+  var video = document.getElementById('video-events');
+  video.muted = true;
+}
+var zoom_size = (screen_width <= 1280 ? 14 : 14.5);
 var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] );
 
 
@@ -9,7 +13,7 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'basic.json', // styles
     minZoom: 12, //restrict map zoom 
-    maxZoom: 17,
+    maxZoom: 18,
     center: map_center, // starting position
     zoom: zoom_size// starting zoom
 });

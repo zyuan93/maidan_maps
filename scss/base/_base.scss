@@ -29,29 +29,77 @@ a {
 
 
 h1 {
-  @include text(5.5em, 1.8em, 800);
+  @media #{$brk-xxlarge} {
+    @include text(10em, 3.2em, 800);
+  }
+  @media #{$brk-xlarge} {
+    @include text(9em, 3em, 800);
+  }
+  @media #{$brk-large} {
+    @include text(5.5em, 1.8em, 800);
+  }
+  @media #{$brk-narrow} {
+    @include text(4.5em, 1.7em, 800);
+  }
+  @media #{$brk-spnarrow} {
+    @include text(2.5em, 1.5em, 800);
+  }
 }
+
 
 h2 {
-  @include text(2em, 2em, bold);
   margin-top: 10em;
   padding-bottom: 1em;
+  @media #{$brk-xlarge} {
+    @include text(2.5em, 3em, 800);
+  }
+  @media #{$brk-large} {
+     @include text(2.1em, 2.2em, bold);
+  }
+  @media #{$brk-medium} {
+     @include text(1.8em, 2em, bold);
+  }
+  @media #{$brk-spnarrow} {
+     @include text(1.7em, 1.8em, bold);
+  }
 }
+
 
 h3 {
-  @include text(1.7em, 2em, bold);
   margin-top: 10em;
+  @media #{$brk-xlarge} {
+    @include text(2em, 2.3em, 800);
+  }
+  @media #{$brk-large} {
+     @include text(1.8em, 2em, bold);
+  }
+  @media #{$brk-medium} {
+     @include text(1.7em, 1.8em, bold);
+  }
+  @media #{$brk-spnarrow} {
+     @include text(1.6em, 1.7em, bold);
+  }
 }
 
-p {
-  @include text(1.5em, 1.7em, 300);
+
+p,li {
+  @media #{$brk-xlarge} {
+    @include text(1.8em, 2em, 300);
+  }
+  @media #{$brk-large} {
+    @include text(1.5em, 1.8em, 300);
+  }
+  @media #{$brk-medium} {
+     @include text(1.5em, 1.6em, 300);
+  }
   padding-bottom: 1.5em;
 }
 
+
 li {
-  @include text(1.5em, 1.7em, 300);
   padding-bottom: 0.5em;
 }
+
 
 ul {
   list-style-type: none;
