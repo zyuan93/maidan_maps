@@ -59,6 +59,7 @@
                 <a class="btn" id="clock-forward-btn"><i class="fa fa-forward" aria-hidden="true"></i></a>
             </div>
 
+            <a class="play-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
             <a class="mute-btn"><i class="fa fa-volume-off mute fa-2x" aria-hidden="true"></i></a>
         </div>
 
@@ -659,8 +660,9 @@ $(window).scroll(function() {
 });
 
 
+var video = document.getElementById('video-events');
+
 $(".mute-btn").click( function (){
-    var video = document.getElementById('video-events');
 
     if (video.muted === false) { 
            $(this).html('<i class="fa fa-volume-up mute fa-2x" aria-hidden="true"></i>');
@@ -674,8 +676,10 @@ $(".mute-btn").click( function (){
 
 
 // inline video 
-var video = document.querySelector('video');
 enableInlineVideo(video);
+$(".play-btn").click( function (){
+    video.play();
+});
 
 </script>
 

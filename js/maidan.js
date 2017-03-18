@@ -1,10 +1,10 @@
 // ======== Mapbox ===========
 
 var screen_width = $( window ).width();
-if ( screen_width <= 768) {
-  var video = document.getElementById('video-events');
-  video.muted = true;
-}
+// if ( screen_width <= 768) {
+//   var video = document.getElementById('video-events');
+//   video.muted = true;
+// }
 var zoom_size = (screen_width <= 1280 ? 14 : 14.5);
 var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] );
 
