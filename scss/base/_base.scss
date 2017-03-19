@@ -92,6 +92,9 @@ p,li {
   @media #{$brk-medium} {
      @include text(1.5em, 1.6em, 300);
   }
+  @media #{$brk-spnarrow} {
+     @include text(1.4em, 1.6em, 300);
+  }
   padding-bottom: 1.5em;
 }
 

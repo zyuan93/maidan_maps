@@ -6532,9 +6532,6 @@
                 };
             AttributionControl.prototype.getDefaultPosition = function() {
                 return "bottom-right"
-            }, AttributionControl.prototype.onAdd = function(t) {
-                var i = this.options && this.options.compact;
-                return this._map = t, this._container = DOM.create("div", "mapboxgl-ctrl mapboxgl-ctrl-attrib"), i && this._container.classList.add("compact"), this._updateAttributions(), this._updateEditLink(), this._map.on("data", this._updateData), this._map.on("moveend", this._updateEditLink), void 0 === i && (this._map.on("resize", this._updateCompact), this._updateCompact()), this._container
             }, AttributionControl.prototype.onRemove = function() {
                 this._container.parentNode.removeChild(this._container), this._map.off("data", this._updateData), this._map.off("moveend", this._updateEditLink), this._map.off("resize", this._updateCompact), this._map = void 0
             }, AttributionControl.prototype._updateEditLink = function() {

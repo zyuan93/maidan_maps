@@ -440,6 +440,7 @@ function play_video(file, note) {
   $( ".video-events-con" ).css( "z-index", 2 );
   $("#map").animate({ opacity: 0 }, 300 );
   $(".video-events-con").animate({ opacity: 1 }, 300 );
+  $(".video-btn").fadeIn(300);
   $("#video-events").html('<source src=' + file + ' type="video/mp4">' );
   document.getElementById('video-events').load();
   document.getElementById('video-events').play();
@@ -452,6 +453,7 @@ function stop_video() {
   $( "#map" ).css( "z-index", 2 );
   $( ".video-events-con" ).css( "z-index", 1 );
   $("#map").animate({ opacity: 1 }, 300 );
+  $(".video-btn").fadeOut(300);
   $(".video-events-con").animate({ opacity: 0 }, 300 );
 }
 
@@ -534,11 +536,15 @@ $('#six').waypoint(function(direction) {
 $('#seven').waypoint(function(direction) {
   $(".mapboxgl-popup, .fight-path").fadeOut("slow");
   show_buildings('181012');
-  $("#video-note").css({ opacity: 1 });
   if (direction === 'down') {
+    $("#hint, #video-note, #video-map").animate({ opacity: 1 }, 300 );
     play_video("http://texty.org.ua/video/maidan_maps/mariinka-start.mp4");
+    window.setTimeout(function(){
+      $("#hint").animate({ opacity: 0 }, 3000 );
+    },7000); 
   } else if (direction === 'up') {
     stop_video();
+    $("#hint, #video-note, #video-map").animate({ opacity: 0 }, 300 );
   }
 },{ offset: 50 });
 

@@ -53,14 +53,19 @@
     </div>
     <div class="col-lg-1 col-lg-offset-9 col-md-1 col-md-offset-9 col-sm-2 col-sm-offset-8 col-xs-12">
         <div class="mute-btn-wrapper" style="display: none;">
+            <a id="play-btn" class="video-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
+            <a class="mute-btn video-btn"><i class="fa fa-volume-off mute fa-2x" aria-hidden="true"></i></a>
             <div class="clock-in-da-top">
                 <a class="btn" id="clock-backward-btn"><i class="fa fa-backward" aria-hidden="true"></i></a>
                 <span class="day-number">18</span> лютого <span class="time">08:30</span>
                 <a class="btn" id="clock-forward-btn"><i class="fa fa-forward" aria-hidden="true"></i></a>
             </div>
-
-            <a id="play-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
-            <a class="mute-btn"><i class="fa fa-volume-off mute fa-2x" aria-hidden="true"></i></a>
+            <br>
+            <div id="hint" class="mobile">
+                <div class="fa fa-hand-o-up fa-3x"></div>
+                <br>
+                <div class="hint-text">запустити<br>відео</div>
+            </div>
         </div>
 
     </div>
@@ -68,17 +73,20 @@
 
 
 <div id="intro">
-   <div class="header-text">
+   <div class="col-lg-12 header-text">
         <h1>Майдан</h1>
         <p class="subtitle">Хто, коли і де загинув на Майдані. Меморіал убитим у центрі Києва.</p>
-        <div id="authors" class="credits">Над проектом працювали:<span>Павло Солодько, Ярина Серкез, Олександр Оксимець, Роман Кульчинський</span></div>
-        <div class="credits"> <span class=" padded-multiline note">Це проект про революцію без прикрас і цензури. В матеріалі присутня ненормативна лексика та сцени насильства.</span></div>
+        <div id="authors" class="credits">Над проектом працювали: <span>Павло Солодько, Ярина Серкез, Олександр Оксимець, Роман Кульчинський</span></div>
+        <div class="credits"> <span class="note">Це проект про революцію без прикрас і цензури. В матеріалі присутня ненормативна лексика та сцени насильства.</span></div>
+        <img src="img/rotate.png" class="img-responsive mobile" alt="landscape">
+        <div class="credits mobile"> Цей проект краще переглядати в горизонтальному форматі</div>
      </div>
 </div>
 
 
 <div id="wrapper"> 
     <div class="video-events-con">
+          <!-- <img src="img/test.png" id="video-map" alt="video-map"> -->
           <div id="video-note">Початок протистояння в Маріїнському парку</div>
          <video id="video-events" autoplay loop webkit-playsinline="true" playsinline="true">
             <source src="http://texty.org.ua/video/maidan_maps/maidan-bg-blacked.mp4" type="video/mp4">

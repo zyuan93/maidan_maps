@@ -14,6 +14,7 @@ function enableButtons(video) {
 			if (video.paused) {
 				$(this).html('<i class="fa fa-pause play fa-2x" aria-hidden="true">');
 				video.play();
+				$("#hint").hide();
 			} else {
 				video.pause();
 				$(this).html('<i class="fa fa-play play fa-2x" aria-hidden="true">');

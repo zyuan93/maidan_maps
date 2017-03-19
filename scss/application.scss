@@ -65,10 +65,6 @@ svg {
   z-index: 1000000;
   width: 100%;
   height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 .header-text {
@@ -80,10 +76,17 @@ svg {
   margin-right: auto; 
   margin-top: 10%;
   width: 35%;
-    @media #{$brk-narrow} {
-      width: 60%;
-      margin-top: 35%;
-    }
+  @media #{$brk-narrow} {
+    margin-top: 35%;
+  }
+  @media #{$brk-spnarrow} {
+    width: 60%;
+    margin-top: 10%;
+  }
+  @media #{$brk-xxsnarrow} {
+    width: 60%;
+    margin-top: 20%;
+  }
 }
 
 .text-container {
@@ -98,19 +101,21 @@ svg {
 }
 
 .mute-btn-wrapper {
-  position:fixed;
+  position: fixed;
   z-index: 100000;
-  padding:3px;
-  top:10px;
-  right:20px;
+  padding: 3px;
+  top: 10px;
+  right: 20px;
   @media #{$brk-xxsnarrow} {
     background: rgba(15,15,19,0.9);
     padding: 15px 0 5px 30px;
-    top:0px;
-    right:0px;
+    top: 0px;
+    right: 0px;
     width: 100%;
   }
 }
+
+
 
 .mute, .play{
   width: 35px;
@@ -128,6 +133,7 @@ svg {
   }
 }
 
+
 .play {
   margin-right: 15px;
 }
@@ -143,9 +149,26 @@ svg {
 
 .clock-in-da-top {
   display: inline-block;
-  margin-right: 12px;
+  margin-top: 3px;
   font-size: 1.5em;
 }
+
+#hint {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  color: #737373;
+  margin-top: 10px;
+  margin-left: -5px;
+  text-align: center;
+  @media #{$brk-narrow} {
+    display: block;
+  }
+}
+
+.hint-text {
+    font-size: 1em;
+  }
 
 .video-events-con {
   opacity: 1;
@@ -153,18 +176,30 @@ svg {
   width: 100%   !important;
   height: auto   !important;
   margin: 0;
-  left:0;
-  top:0;
-  z-index:2;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 
 #video-note {
-  width: 130px; 
+  width: 150px; 
   height: 100px; 
   position: fixed; 
-  bottom: 50px; 
-  right:30px;
-  opacity:0;
+  bottom: 0px; 
+  right: 30px;
+  opacity: 0;
+}
+
+#video-map {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  bottom: 110px; 
+  right: 30px;
+  opacity: 0;
+  @media #{$brk-xxsnarrow} {
+    display:none;
+  }
 }
 
 video { 
@@ -309,7 +344,7 @@ p  {
 
 .mobile {
   display: none;
-  @media #{$brk-spnarrow} {
+  @media #{$brk-xxsnarrow} {
     display: block;
   }
 }
