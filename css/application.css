@@ -73,7 +73,7 @@ h2 {
       font-weight: bold; } }
 
 h3 {
-  margin-top: 10em; }
+  margin-top: 3em; }
   @media (max-width: 1920px) {
     h3 {
       font-size: 2em;
@@ -267,7 +267,8 @@ svg {
 
 .text-container {
   margin-left: 85px;
-  margin-top: 100%; }
+  margin-top: 100%;
+  margin-bottom: 100%; }
   @media (max-width: 768px) {
     .text-container {
       margin-top: 210%; } }
@@ -444,6 +445,11 @@ p span.police {
   background: rgba(223, 101, 176, 0.4); }
 p span.black {
   background: rgba(15, 15, 19, 0.7); }
+
+.summary {
+  margin-top: 15em;
+  font-size: 1.7em;
+  letter-spacing: 2px; }
 
 /* pudded multiline*/
 .padded-multiline {

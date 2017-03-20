@@ -92,6 +92,7 @@ svg {
 .text-container {
  margin-left: 85px;
  margin-top: 100%;
+ margin-bottom: 100%;
   @media #{$brk-narrow} {
       margin-top: 210%;
   }
@@ -226,7 +227,6 @@ video {
  }
 }
 
-
 h1 {
   text-align: center;
 }
@@ -298,6 +298,12 @@ p  {
     }
 }
 
+
+.summary {
+  margin-top: 15em;
+  font-size: 1.7em;
+  letter-spacing: 2px;
+}
 
 /* pudded multiline*/
 
