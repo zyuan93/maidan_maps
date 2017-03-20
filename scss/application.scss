@@ -130,7 +130,7 @@ svg {
   user-select: none;
   cursor: pointer;
   &:hover {
-    border:1px solid $orange;
+    border:1px solid #bfd3e6;
   }
 }
 
@@ -145,7 +145,7 @@ svg {
 
 .btn.focus,.btn:focus,
 .btn:hover {
-  color: $orange;
+  color: #9ebcda;
 }
 
 .clock-in-da-top {
@@ -362,6 +362,10 @@ p  {
   }
 }
 
+
+.partners-logo {
+  margin-left:15px;
+}
 
 
 

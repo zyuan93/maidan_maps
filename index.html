@@ -49,7 +49,7 @@
  <!-- Fixed navbar -->
 <div class="row logo-buttons" style="width:100%;">
     <a href="http://texty.org.ua"><img class="logo" src="img/logo.png"></a>
-    <a href="http://www.radiosvoboda.org/"><img class="logo" src="img/radio-liberty.png" style="margin-left:180px;"></a>
+    <a href="http://www.radiosvoboda.org/"><img class="logo" src="img/radio-liberty.png" style="margin-left:210px;"></a>
     <div class="mute-btn-wrapper" style="display: none;">
         <a id="play-btn" class="video-btn"><i class="fa fa-play play fa-2x" aria-hidden="true"></i></a>
         <a class="mute-btn video-btn"><i class="fa fa-volume-off mute fa-2x" aria-hidden="true"></i></a>
@@ -70,9 +70,9 @@
 
 <div id="intro">
    <div class="col-lg-12 header-text">
-        <h1>Майдан</h1>
+        <h1>Три дні у лютому</h1>
         <p class="subtitle">Хто, коли і де загинув на Майдані. Меморіал убитим у центрі Києва.</p>
-        <div id="authors" class="credits">Над проектом працювали: <span>Павло Солодько, Ярина Серкез, Олександр Оксимець, Роман Кульчинський</span></div>
+        <div id="authors" class="credits">Над проектом працювали: <span>Павло Солодько, Ярина Серкез, Олександр Оксимець, Роман Кульчинський, Влад Герасименко</span></div>
         <div class="credits"> <span class="note">Це проект про революцію без прикрас і цензури. В матеріалі присутня ненормативна лексика та сцени насильства.</span></div>
         <img src="img/rotate.png" class="img-responsive mobile" alt="landscape">
         <div class="credits mobile"> Цей проект краще переглядати в горизонтальному форматі</div>
@@ -567,6 +567,8 @@
         <p id="seventy-eight" class="summary">Загалом на сьогодні відомо про X загиблих під час Революції Гілності. Х вважаються зниклими безвісти. Х отримали вогнепальні та осколочні поранення.</p>
     </div>
     <div class="col-lg-6 col-lg-offset-3 col-xs-12 disclaimer">
+        <a <i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+        <a <i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
         <h3>Джерела:</h3>
         <ul>
             <li><a class="dotted" href="http://www.istpravda.com.ua/articles/2015/02/18/147385/">Хронологія</a></li>
@@ -576,6 +578,10 @@
             <li><a class="dotted" href="http://www.nebesnasotnya.in.ua/">nebesnasotnya.in.ua</a></li>
         </ul> 
         <h3>Партнери:</h3>
+        <img src="img/babylon13.png" class="partners-logo" alt="babylon13">
+        <img src="img/radio-liberty-bigger.png" class="partners-logo" alt="radio liberty">
+        <img src="img/sweden.png" class="partners-logo" alt="Sweden ambassy">
+        <img src="img/ned.png" class="partners-logo" alt="ned">
     </div>
         
 
@@ -592,7 +598,7 @@
             /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         </style>
-        <div id="mc_embed_signup" style="z-index:1000000; position:absolute; margin-top: 50px; background-color: rgba(0, 0, 0, 0);">
+        <div id="mc_embed_signup" style="z-index:1000000; position:absolute; margin-top: 35px; margin-bottom: 35px; background-color: rgba(0, 0, 0, 0);">
         <form action="//texty.us2.list-manage.com/subscribe/post?u=6a4d05e311e165b44ca8ccb21&amp;id=7eccc55fe8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
             <label for="mce-EMAIL">Будь ласка, підпишіться на анонси наших наступних проектів (~два повідомлення на місяць)</label>
@@ -610,29 +616,6 @@
 
 
 
-
-
-
-
-
-
-<!-- <div class="container">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-        <h4 style="text-align:center"><b>Читайте також</b></h4>
-        <div class="col-sm-4 read-more">
-            <a target="_blank" href="http://texty.org.ua/d/fb-trolls/"><img src="img/trolls.png" class="img-responsive" alt="Тролесфера"></a>
-        </div>
-        <div class="col-sm-4 read-more">
-            <a target="_blank" href="http://texty.org.ua/d/medvedchuk/"><img src="img/medvedchuk.png" class="img-responsive" alt="Церква свідків Медведчука"></a>
-        </div>
-        <div class="col-sm-4 read-more">
-             <a target="_blank" href="http://texty.org.ua/d/socio/index.html"><img src="img/socio.png" class="img-responsive" alt="Продавці рейтингів. База псевдосоціологів"></a>
-         </div>
-    </div>
-</div> -->
-
-
-
 <script src="js/d3-maidan.min.js"></script>
 <script src="js/mapbox-gl.min.js"></script>
 <script src="js/jquery-2.1.4.min.js"></script>
@@ -644,10 +627,6 @@
 <script src="js/clock.js"></script>
 <script src="js/mobile-video.js"></script>
 <script type="text/javascript">
-
-
-
-
 
 
 
@@ -681,17 +660,6 @@ $(".mute-btn").click( function (){
     }
 });
 
-
-// // inline video 
-// enableInlineVideo(video);
-// $(".play-btn").click( function (){
-//     if (video.paused) {
-//                 video.play();
-//             } else {
-//                 video.pause();
-//             }
-//     console.log("hey, I work normally");
-// });
 
 </script>
 

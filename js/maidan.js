@@ -6,7 +6,7 @@ console.log(screen_width);
 //   var video = document.getElementById('video-events');
 //   video.muted = true;
 // }
-var zoom_size = (screen_width <= 1280 ? 14 : screen_width <= 1440 ? 14.4 : 14.6);
+var zoom_size = (screen_width <= 768 ? 13.5: screen_width <= 1280 ? 14 : screen_width <= 1440 ? 14.4 : 14.6);
 var map_center = (screen_width <= 768 ? [30.523904,50.448349] : [30.520715, 50.448279] );
 
 
@@ -548,6 +548,7 @@ $('#seven').waypoint(function(direction) {
 $('#eight').waypoint(function(direction) {
   if (direction === 'down') {
     stop_video();
+    $("#hint").animate({ opacity: 0 }, 300 );
   } else if (direction === 'up') {
     play_video("http://texty.org.ua/video/maidan_maps/mariinka-start.mp4", "Початок протистояння в Маріїнському парк");
   }
@@ -954,7 +955,7 @@ $('#fifty-two').waypoint(function(direction) {
 
 $('#fifty-three').waypoint(function(direction) {
   $(".mapboxgl-popup").fadeOut("slow");
-  d3.select("#chorna-rota").attr("opacity", 0.9).style("stroke", "#ce1256").style("fill", "#000000");
+  d3.select("#chorna-rota").attr("opacity", 0.8).style("fill", "#000000");
   show_killing("2014-02-20 08:59:35", "2014-02-20 09:00:37", true);
   create_popup([30.528248, 50.449275], 'Поява чорної роти');
   if(direction === "up") {
@@ -1136,7 +1137,7 @@ $('#seventy-four').waypoint(function(direction) {
      stop_video();  
      morph("geo200929", ["maidan", "berkut"]);
      map.getSource('barricade-data').setData("lines_200921.geojson");
-     d3.select("#chorna-rota").attr("opacity", 0.2);
+     d3.select("#chorna-rota").attr("opacity", 0.8);
      animate_fly([30.527048, 50.448768], zoom_size*1.17, 10, 10);
   }
 },{ offset: 10 });
@@ -1173,7 +1174,7 @@ $('#seventy-eight').waypoint(function(direction) {
 
 
 $('.disclaimer').waypoint(function(direction) {
-  $("#map").css("opacity", 0.3);
+  $("#map").css("opacity", 0.15);
   if(direction === "up") {
     $("#map").css("opacity", 1);
   }
